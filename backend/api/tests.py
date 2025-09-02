@@ -1,7 +1,10 @@
+"""Тесты для API."""
+
 from http import HTTPStatus
 
-from . import models
 from django.test import Client, TestCase
+
+from . import models
 
 
 class TaskiAPITestCase(TestCase):
