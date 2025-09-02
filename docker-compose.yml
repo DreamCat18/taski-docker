@@ -1,45 +1,33 @@
-version: '3.8'
+volumes:
+  pg_data:
+  static:
+
 
 services:
-  postgres:
-    image: postgres:15
-    environment:
-      POSTGRES_DB: taski
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+  db:
+    image: postgres:13.10
+    env_file: .env
     volumes:
-      - db_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-
+      - pg_data:/var/lib/postgresql/data
   backend:
-    build: ./backend
+    build: ./backend/
+    env_file: .env
     depends_on:
-      - postgres
-    environment:
-      DATABASE_URL: postgresql://postgres:password@postgres:5432/taski
+      - db
     volumes:
-      - static:/app/static
-    ports:
-      - "8000:8000"
-
+      - static:/backend_static
   frontend:
-    build: ./frontend
+    env_file: .env
+    build: ./frontend/
     volumes:
       - static:/frontend_static
     command: sh -c "npm run build && cp -r /app/build/* /frontend_static/"
-
-  nginx:
-    image: nginx:alpine
+  gateway:
+    build: ./gateway/
     depends_on:
       - backend
       - frontend
     volumes:
-      - static:/usr/share/nginx/html
-      - ./nginx.conf:/etc/nginx/nginx.conf
+      - static:/staticfiles
     ports:
-      - "80:80"
-
-volumes:
-  static:
-  db_data:
+      - "8000:80"
