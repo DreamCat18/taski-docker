@@ -143,11 +143,13 @@ jobs:
           script: |
             cd taski
             sudo apt update && sudo apt install -y docker.io docker-compose
+            sudo systemctl start docker
+            sudo systemctl enable docker
+            sudo usermod -aG docker ${{ secrets.USER }}
+            newgrp docker
             docker-compose -f docker-compose.production.yml pull
             docker-compose -f docker-compose.production.yml down
             docker-compose -f docker-compose.production.yml up -d
-            docker-compose -f docker-compose.production.yml exec backend python manage.py migrate
-            docker-compose -f docker-compose.production.yml exec backend python manage.py collectstatic
             docker-compose -f docker-compose.production.yml exec backend cp -r /app/collected_static/. /backend_static/static/
   send_message:
     runs-on: ubuntu-latest

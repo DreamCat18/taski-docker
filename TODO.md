@@ -1,17 +1,13 @@
-# TODO: Fix GitHub Actions Deployment Error
+# Deployment Fix TODO
 
-## Completed Steps
-- [x] Analyze the GitHub Actions workflow and identify the cause of "sudo: docker: command not found" error
-- [x] Read relevant files (.github/workflows/main.yml, docker-compose.production.yml)
-- [x] Create a plan to remove 'sudo' from docker commands in the workflow script
-- [x] Edit .github/workflows/main.yml to remove 'sudo' from docker compose commands
-- [x] Change 'docker compose' to 'docker-compose' to use the standalone tool
-- [x] Remove invalid 'sudo' parameter from appleboy/ssh-action
-
-## Pending Steps
-- [ ] Commit and push the changes to the repository to test the updated workflow
-- [ ] Verify that the remote host has Docker and docker-compose installed
-- [ ] Ensure the SSH user on the remote host is added to the docker group (run `sudo usermod -aG docker $USER` on remote host if needed)
-- [ ] Test the deployment by triggering the workflow (e.g., push to main branch)
-- [ ] Monitor the workflow logs to confirm the deployment succeeds without the docker command error
-- [ ] If the error persists, install Docker and docker-compose on the remote host (e.g., for Ubuntu: `sudo apt update && sudo apt install -y docker.io docker-compose`)
+- [x] Analyze the GitHub Actions deployment error "sudo: docker: command not found"
+- [x] Read relevant files: .github/workflows/main.yml, docker-compose.production.yml, backend/Dockerfile, backend/entrypoint.sh
+- [x] Identify issues: Docker not started, user not in docker group, redundant commands
+- [x] Update .github/workflows/main.yml deploy script:
+  - Add sudo systemctl start docker and sudo systemctl enable docker
+  - Add sudo usermod -aG docker ${{ secrets.USER }}
+  - Add newgrp docker to apply group change
+  - Remove redundant exec commands for migrate and collectstatic (handled by entrypoint.sh)
+  - Keep docker-compose commands without sudo
+- [ ] Push the changes to the repository and test the deployment
+- [ ] Verify that the deployment succeeds without errors
