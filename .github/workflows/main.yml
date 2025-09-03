@@ -148,9 +148,9 @@ jobs:
             sudo systemctl enable docker
             sudo usermod -aG docker ${{ secrets.USER }}
             newgrp docker
-            docker-compose -f docker-compose.production.yml pull
-            docker-compose -f docker-compose.production.yml down
-            docker-compose -f docker-compose.production.yml up -d
+            docker compose -f docker-compose.production.yml pull
+            docker compose -f docker-compose.production.yml down
+            docker compose -f docker-compose.production.yml up -d
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
