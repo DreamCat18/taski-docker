@@ -142,7 +142,8 @@ jobs:
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
             cd taski
-            sudo apt update && sudo apt install -y docker.io docker-compose docker-compose-plugin
+            sudo apt update
+            sudo apt install -y docker.io docker-compose docker-compose-plugin
             sudo systemctl start docker
             sudo systemctl enable docker
             sudo usermod -aG docker ${{ secrets.USER }}
