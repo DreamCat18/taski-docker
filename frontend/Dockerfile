@@ -10,4 +10,3 @@ COPY . .
 
 RUN npm run build
 
-# No CMD, will be overridden in docker-compose

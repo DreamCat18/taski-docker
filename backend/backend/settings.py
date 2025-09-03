@@ -1,4 +1,4 @@
-"""Настройки Django проекта."""
+"""Настройка Django проекта."""
 
 import os
 from pathlib import Path
