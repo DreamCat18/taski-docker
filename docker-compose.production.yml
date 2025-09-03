@@ -1,0 +1,33 @@
+volumes:
+  pg_data:
+  static:
+
+
+services:
+  db:
+    image: postgres:13.10
+    env_file: .env
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+  backend:
+    image: dreamcat18/taski_backend:latest
+    env_file: .env
+    depends_on:
+      - db
+    volumes:
+      - static:/backend_static
+  frontend:
+    image: dreamcat18/taski_frontend:latest
+    env_file: .env
+    volumes:
+      - static:/frontend_static
+    command: sh -c "npm run build && cp -r /app/build/* /frontend_static/"
+  gateway:
+    image: dreamcat18/taski_gateway:latest
+    depends_on:
+      - backend
+      - frontend
+    volumes:
+      - static:/staticfiles
+    ports:
+      - "8000:80"
