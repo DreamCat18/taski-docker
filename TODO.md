@@ -10,5 +10,5 @@
   - Install docker-compose-plugin for "docker compose" support
   - Change to "docker compose" commands without sudo
   - Remove redundant exec commands for migrate and collectstatic (handled by entrypoint.sh)
-- [ ] Push the changes to the repository and test the deployment
+- [x] Push the changes to the repository and test the deployment
 - [ ] Verify that the deployment succeeds without errors
