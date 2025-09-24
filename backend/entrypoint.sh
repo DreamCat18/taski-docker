@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Wait for postgres to be ready
-until pg_isready -h postgres -p 5432 -U postgres; do
+until pg_isready -h db -p 5432 -U postgres; do
   echo "Waiting for postgres..."
   sleep 2
 done

@@ -32,10 +32,30 @@
 - **Fix**: Updated root location to proxy to frontend service
 - **Status**: ✅ Completed
 
+### 6. Frontend Dependencies Update
+- **File**: `frontend/package.json`
+- **Issue**: Deprecated npm packages causing warnings during build
+- **Fix**: Updated react-scripts to v6 to resolve deprecated sub-dependencies
+- **Status**: ✅ Completed
+
+## Issues Fixed
+
+### 7. Database Connection Host Mismatch
+- **File**: `backend/entrypoint.sh`
+- **Issue**: pg_isready was using host 'postgres' instead of 'db' (the service name)
+- **Fix**: Changed host to 'db'
+- **Status**: ✅ Completed
+
+### 8. Missing Environment File
+- **File**: `.env`
+- **Issue**: No .env file for database credentials
+- **Fix**: Created .env with default PostgreSQL settings
+- **Status**: ✅ Completed
+
 ## Next Steps
 
 1. **Test the Setup**:
-   - Run `docker-compose up` to start all services
+   - Run `docker-compose up --build` to start all services
    - Verify frontend can communicate with backend
    - Check API endpoints are working
 
