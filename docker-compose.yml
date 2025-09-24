@@ -17,11 +17,16 @@ services:
     volumes:
       - static:/backend_static
   frontend:
-    env_file: .env
     build: ./frontend/
+    env_file: .env
     volumes:
-      - static:/frontend_static
-    command: sh -c "npm run build && cp -r /app/build/* /frontend_static/"
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    command: npm start
+    environment:
+      - NODE_ENV=development
   gateway:
     build: ./gateway/
     depends_on:

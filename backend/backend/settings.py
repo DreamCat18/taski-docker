@@ -69,7 +69,7 @@ DATABASES = {
         'NAME': os.getenv('POSTGRES_DB', 'django'),
         'USER': os.getenv('POSTGRES_USER', 'django'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD', ''),
-        'HOST': os.getenv('DB_HOST', ''),
+        'HOST': os.getenv('DB_HOST', 'db'),
         'PORT': os.getenv('DB_PORT', 5432)
     }
 }
@@ -120,5 +120,11 @@ STATIC_ROOT = BASE_DIR / 'collected_static'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000'
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'http://frontend:3000',
+    'http://gateway:80',
+    'http://localhost:8000'
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True

@@ -12,6 +12,8 @@ axios.interceptors.response.use(function (response) {
   return response;
 });
 
+axios.defaults.baseURL = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8000';
+
 const App = () => {
   const [isShowCompleted, setIsShowCompleted] = useState(false);
   const [taskList, setTaskList] = useState([]);
