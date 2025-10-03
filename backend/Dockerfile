@@ -1,19 +1,19 @@
-FROM python:3.12
+FROM python:3.12-alpine
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y postgresql-client && rm -rf /var/lib/apt/lists/*
-
-RUN pip install gunicorn==23.0.0
-
 COPY requirements.txt .
 
-RUN pip install -r requirements.txt --no-cache-dir
+
+RUN pip install --upgrade setuptools pip
+
+RUN pip install "cython<3.0.0" wheel
+RUN pip install "pyyaml==5.3.1" 
+
+RUN apk add build-base zlib-dev jpeg-dev
+
+RUN pip install -r requirements.txt --no-cache-dir 
 
 COPY . .
 
-COPY entrypoint.sh .
-
-RUN chmod +x entrypoint.sh
-
-ENTRYPOINT ["./entrypoint.sh"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "backend.wsgi"]
