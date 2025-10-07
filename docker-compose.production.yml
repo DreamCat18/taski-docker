@@ -3,7 +3,6 @@ volumes:
   static_volume:
   static:
 
-
 services:
   db:
     image: postgres:13
