@@ -5,7 +5,7 @@ volumes:
 
 services:
   db:
-    image: postgres:13.10
+    image: postgres:13
     env_file: .env
     volumes:
       - pg_data:/var/lib/postgresql/data
@@ -19,20 +19,16 @@ services:
   frontend:
     build: ./frontend/
     env_file: .env
+    command: cp -r /app/build/. /static/
     volumes:
-      - ./frontend:/app
-      - /app/node_modules
-    ports:
-      - "3000:3000"
-    command: npm start
-    environment:
-      - NODE_ENV=development
+      - static:/static
   gateway:
     build: ./gateway/
+    env_file: .env
     depends_on:
       - backend
       - frontend
-    volumes:
-      - static:/staticfiles
     ports:
-      - "8000:80"
+      - 8000:80
+    volumes:
+      - static:/static

@@ -1,0 +1,452 @@
+[
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "routers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPStatus",
+        "importPath": "http",
+        "description": "http",
+        "isExtraImport": true,
+        "detail": "http",
+        "documentation": {}
+    },
+    {
+        "label": "Client",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "get_asgi_application",
+        "importPath": "django.core.asgi",
+        "description": "django.core.asgi",
+        "isExtraImport": true,
+        "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "views",
+        "importPath": "api",
+        "description": "api",
+        "isExtraImport": true,
+        "detail": "api",
+        "documentation": {}
+    },
+    {
+        "label": "get_wsgi_application",
+        "importPath": "django.core.wsgi",
+        "description": "django.core.wsgi",
+        "isExtraImport": true,
+        "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "TaskAdmin",
+        "kind": 6,
+        "importPath": "taski-docker-main.backend.api.admin",
+        "description": "taski-docker-main.backend.api.admin",
+        "peekOfCode": "class TaskAdmin(admin.ModelAdmin):\n    \"\"\"Админ-класс для модели Task.\"\"\"\n    list_display = ('title', 'description', 'completed')\nadmin.site.register(Task, TaskAdmin)",
+        "detail": "taski-docker-main.backend.api.admin",
+        "documentation": {}
+    },
+    {
+        "label": "ApiConfig",
+        "kind": 6,
+        "importPath": "taski-docker-main.backend.api.apps",
+        "description": "taski-docker-main.backend.api.apps",
+        "peekOfCode": "class ApiConfig(AppConfig):\n    \"\"\"Конфигурация приложения API.\"\"\"\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'api'",
+        "detail": "taski-docker-main.backend.api.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Task",
+        "kind": 6,
+        "importPath": "taski-docker-main.backend.api.models",
+        "description": "taski-docker-main.backend.api.models",
+        "peekOfCode": "class Task(models.Model):\n    \"\"\"Модель задачи.\"\"\"\n    title = models.CharField(verbose_name='Заголовок', max_length=120)\n    description = models.TextField()\n    completed = models.BooleanField(default=False)\n    def __str__(self):\n        return self.title",
+        "detail": "taski-docker-main.backend.api.models",
+        "documentation": {}
+    },
+    {
+        "label": "TaskSerializer",
+        "kind": 6,
+        "importPath": "taski-docker-main.backend.api.serializers",
+        "description": "taski-docker-main.backend.api.serializers",
+        "peekOfCode": "class TaskSerializer(serializers.ModelSerializer):\n    \"\"\"Сериализатор для модели Task.\"\"\"\n    class Meta:\n        \"\"\"Мета-класс для TaskSerializer.\"\"\"\n        model = Task\n        fields = ('id', 'title', 'description', 'completed')",
+        "detail": "taski-docker-main.backend.api.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "TaskiAPITestCase",
+        "kind": 6,
+        "importPath": "taski-docker-main.backend.api.tests",
+        "description": "taski-docker-main.backend.api.tests",
+        "peekOfCode": "class TaskiAPITestCase(TestCase):\n    \"\"\"Тесты API задач.\"\"\"\n    def setUp(self):\n        \"\"\"Настройка тестового клиента.\"\"\"\n        self.guest_client = Client()\n    def test_list_exists(self):\n        \"\"\"Проверка доступности списка задач.\"\"\"\n        response = self.guest_client.get('/api/tasks/')\n        self.assertEqual(response.status_code, HTTPStatus.OK)\n    def test_task_creation(self):",
+        "detail": "taski-docker-main.backend.api.tests",
+        "documentation": {}
+    },
+    {
+        "label": "TaskView",
+        "kind": 6,
+        "importPath": "taski-docker-main.backend.api.views",
+        "description": "taski-docker-main.backend.api.views",
+        "peekOfCode": "class TaskView(viewsets.ModelViewSet):\n    \"\"\"Представление для модели Task.\"\"\"\n    serializer_class = TaskSerializer\n    queryset = Task.objects.all()\n    def destroy(self, *args, **kwargs):\n        \"\"\"Удаление задачи.\"\"\"\n        serializer = self.get_serializer(self.get_object())\n        super().destroy(*args, **kwargs)\n        return Response(serializer.data, status=status.HTTP_200_OK)",
+        "detail": "taski-docker-main.backend.api.views",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.asgi",
+        "description": "taski-docker-main.backend.backend.asgi",
+        "peekOfCode": "application = get_asgi_application()",
+        "detail": "taski-docker-main.backend.backend.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\nSECRET_KEY = 'django-insecure-j_89af+30&&4qm*8z9_(^zz8p4-ho8z_m6ylm0s$h!-p@on1_^'\nDEBUG = False\nALLOWED_HOSTS = ['89.169.169.60', 'localhost',\n                 '127.0.0.1', 'mytaskiproject.ddns.net']\n# Application definition\nINSTALLED_APPS = [\n    'api.apps.ApiConfig',\n    'django.contrib.admin',\n    'django.contrib.auth',",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-j_89af+30&&4qm*8z9_(^zz8p4-ho8z_m6ylm0s$h!-p@on1_^'\nDEBUG = False\nALLOWED_HOSTS = ['89.169.169.60', 'localhost',\n                 '127.0.0.1', 'mytaskiproject.ddns.net']\n# Application definition\nINSTALLED_APPS = [\n    'api.apps.ApiConfig',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "DEBUG = False\nALLOWED_HOSTS = ['89.169.169.60', 'localhost',\n                 '127.0.0.1', 'mytaskiproject.ddns.net']\n# Application definition\nINSTALLED_APPS = [\n    'api.apps.ApiConfig',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_HOSTS",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "ALLOWED_HOSTS = ['89.169.169.60', 'localhost',\n                 '127.0.0.1', 'mytaskiproject.ddns.net']\n# Application definition\nINSTALLED_APPS = [\n    'api.apps.ApiConfig',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "INSTALLED_APPS",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "INSTALLED_APPS = [\n    'api.apps.ApiConfig',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'corsheaders',\n    'rest_framework',",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MIDDLEWARE",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "MIDDLEWARE = [\n    'corsheaders.middleware.CorsMiddleware',\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT_URLCONF",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "ROOT_URLCONF = 'backend.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATES",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "WSGI_APPLICATION",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "WSGI_APPLICATION = 'backend.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.postgresql',\n        'NAME': os.getenv('POSTGRES_DB', 'django'),\n        'USER': os.getenv('POSTGRES_USER', 'django'),\n        'PASSWORD': os.getenv('POSTGRES_PASSWORD', ''),\n        'HOST': os.getenv('DB_HOST', 'db'),",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASES",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.postgresql',\n        'NAME': os.getenv('POSTGRES_DB', 'django'),\n        'USER': os.getenv('POSTGRES_USER', 'django'),\n        'PASSWORD': os.getenv('POSTGRES_PASSWORD', ''),\n        'HOST': os.getenv('DB_HOST', 'db'),\n        'PORT': os.getenv('DB_PORT', 5432)\n    }\n}",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTH_PASSWORD_VALIDATORS",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "AUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LANGUAGE_CODE",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\nSTATIC_ROOT = BASE_DIR / 'collected_static'\n# Default primary key field type",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TIME_ZONE",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\nSTATIC_ROOT = BASE_DIR / 'collected_static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_I18N",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "USE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\nSTATIC_ROOT = BASE_DIR / 'collected_static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_L10N",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\nSTATIC_ROOT = BASE_DIR / 'collected_static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# CORS_ORIGIN_WHITELIST = [",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_TZ",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = '/static/'\nSTATIC_ROOT = BASE_DIR / 'collected_static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# CORS_ORIGIN_WHITELIST = [\n#     'http://localhost:3000',",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_URL",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "STATIC_URL = '/static/'\nSTATIC_ROOT = BASE_DIR / 'collected_static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# CORS_ORIGIN_WHITELIST = [\n#     'http://localhost:3000',\n#     'http://127.0.0.1:3000',\n#     'http://frontend:3000',\n#     'http://gateway:80',",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_ROOT",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "STATIC_ROOT = BASE_DIR / 'collected_static'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# CORS_ORIGIN_WHITELIST = [\n#     'http://localhost:3000',\n#     'http://127.0.0.1:3000',\n#     'http://frontend:3000',\n#     'http://gateway:80',\n#     'http://localhost:8000'",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_AUTO_FIELD",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# CORS_ORIGIN_WHITELIST = [\n#     'http://localhost:3000',\n#     'http://127.0.0.1:3000',\n#     'http://frontend:3000',\n#     'http://gateway:80',\n#     'http://localhost:8000'\n# ]\n# CORS_ALLOW_ALL_ORIGINS = True\nCORS_ALLOWED_ORIGINS = [",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CORS_ALLOWED_ORIGINS",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:3000\",  # React default port\n    \"http://127.0.0.1:3000\",\n]\nCORS_ALLOW_CREDENTIALS = True",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CORS_ALLOW_CREDENTIALS",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.settings",
+        "description": "taski-docker-main.backend.backend.settings",
+        "peekOfCode": "CORS_ALLOW_CREDENTIALS = True",
+        "detail": "taski-docker-main.backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.urls",
+        "description": "taski-docker-main.backend.backend.urls",
+        "peekOfCode": "router = routers.DefaultRouter()\nrouter.register('tasks', views.TaskView, 'task')\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/', include(router.urls)),\n]",
+        "detail": "taski-docker-main.backend.backend.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.urls",
+        "description": "taski-docker-main.backend.backend.urls",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/', include(router.urls)),\n]",
+        "detail": "taski-docker-main.backend.backend.urls",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "taski-docker-main.backend.backend.wsgi",
+        "description": "taski-docker-main.backend.backend.wsgi",
+        "peekOfCode": "application = get_wsgi_application()",
+        "detail": "taski-docker-main.backend.backend.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "taski-docker-main.backend.manage",
+        "description": "taski-docker-main.backend.manage",
+        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
+        "detail": "taski-docker-main.backend.manage",
+        "documentation": {}
+    }
+]
